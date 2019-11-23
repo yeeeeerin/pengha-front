@@ -1,25 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import MonthTitle from "./MonthTitle";
 import MoodList from "./MoodList";
 import Mood from "../../common/Mood";
+import { Redirect } from "react-router";
 
 const Calendar = (props) => {
 
     const { month } = props;
-
+    const [isClick, setIsClick] = useState(false);
     const height = props.height;
-
     return (
         <Wrapper height={height}>
             <MonthTitle year={2019} month={month}></MonthTitle>
             <MoodList>
                 {
                     dummy.find(m => m.year === month).data.map(m => {
-                        return (<Mood size="middle" type={m} />)
+                        return (<Mood size="middle" type={m} onClick={_=>{setIsClick(true)}}/>)
                     })
                 }
             </MoodList>
+            {
+                isClick &&
+                <Redirect push to="/DailyList"/>
+            }
         </Wrapper>
     )
 }
