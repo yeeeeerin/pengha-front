@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const CalendarList = (props) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 500)
+  }, [])
+
   return <UlLayout>{props.children}</UlLayout>;
 }
 
@@ -21,5 +26,7 @@ const UlLayout = styled.ul`
   display: inline-block;
 
   align-items: center;
+
+  
 
 `;
