@@ -60,7 +60,7 @@ return(
       {/* <TooltipPengsu>
         <TooltipTriangle src={triagle} alt="말풍선을 위한 삼각형"/>
       </TooltipPengsu> */}
-      <Tooltip property={{msg:'펭-하!'}}/>
+      <Tooltip property={{msg:'펭-하!', top:'-40px',right:'0'}}/>
      </DivPengsu>
     <Login/>
   </>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from './main/Main';
 import LoginContainer from './components/Login/LoginContainer';
+import DailyList from './components/Daily/DailyList';
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Router>
         <Route exact path="/" component={LoginContainer} />
         <Route exact path="/main" component={Main} />
+        <Route exact path="/dailylist" component={DailyList} />
         {/* <Route exact path="/" component={Main} /> */}
       </Router>
     </Wrapper>
