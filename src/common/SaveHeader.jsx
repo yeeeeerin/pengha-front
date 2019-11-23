@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import back from "../static/img/back-icon.svg";
+import { Redirect } from "react-router";
 
 const SaveHeader = (props) => {
+
+    const [isOk, setIsOk] = useState(false);
+
+    const handleOk = () => {
+        setIsOk(true);
+    }
+
     return (
         <Wrapper>
 
             <img className="back" src={back} alt="" />
 
-            <div className="save">확인</div>
+            <div className="save" onClick={handleOk}>확인</div>
+
+            {isOk && <Redirect push to={`/`} />}
         </Wrapper>
 
     )
@@ -35,6 +45,8 @@ const Wrapper = styled.div`
         font-size:18px;
         right:7.5%;
         bottom:24%;
+
+        color:#18193f;
     }
 
 `

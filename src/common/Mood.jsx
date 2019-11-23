@@ -1,17 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import peng from "../static/img/peng.png";
+import { moodList } from "../util/moodList"
 
 
 const Mood = (props) => {
 
-    const { size } = props;
+    const { size, type, onClick } = props;
     const width = size === 'small' ? 20 :
-        size === 'middle' ? 70 : 90;
+        size === 'middle' ? 20 : 42;
 
+    const mood = moodList.find(m => m.type === type);
+
+    const clickMood = () => {
+
+
+        onClick && onClick(mood.type)
+
+    }
 
     return (
-        <Wrapper src={peng} width={width} />
+        <Wrapper src={require(`../static/img/mood/${mood.img}`)} width={width} onClick={clickMood} />
     )
 
 }
@@ -20,7 +28,8 @@ export default Mood;
 const Wrapper = styled.img`
     position:relative;
     width: ${props => `${props.width}%`};
-    background : #000;
+    top:28.1px;
 
-    margin-right:6%;
+    margin-right:5%;
+    margin-bottom:27px;
 `

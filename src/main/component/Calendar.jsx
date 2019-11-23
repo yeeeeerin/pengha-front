@@ -12,10 +12,10 @@ const Calendar = (props) => {
         <Wrapper height={height}>
             <MonthTitle year={2019} month={11}></MonthTitle>
             <MoodList>
-                <Mood size="small" />
-                <Mood size="small" />
-                <Mood size="small" />
-                <Mood size="small" />
+                <Mood size="middle" type="best" />
+                <Mood size="middle" type="sad" />
+                <Mood size="middle" type="best" />
+                <Mood size="middle" type="best" />
             </MoodList>
         </Wrapper>
     )
@@ -31,5 +31,6 @@ const Wrapper = styled.div`
 
     background:pink;
     margin-top:18px;
+    
 
 `
