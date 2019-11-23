@@ -22,5 +22,4 @@ const UlLayout = styled.ul`
 
   align-items: center;
 
-  background:#FBF5EF;
 `;

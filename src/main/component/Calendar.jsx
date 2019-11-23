@@ -29,7 +29,6 @@ const Wrapper = styled.div`
     height: ${props => `${props.height}%`};
     left:7.5%;
 
-    background:pink;
     margin-top:18px;
     
 
