@@ -3,6 +3,7 @@ import styled from "styled-components";
 import graph from "../static/img/graph-icon.svg";
 import add from "../static/img/add-icon.svg";
 
+
 const Header = (props) => {
     return (
         <Wrapper>
