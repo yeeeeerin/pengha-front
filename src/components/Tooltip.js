@@ -4,7 +4,7 @@ import triagle from '../static/img/triangle.svg';
 
 const TooltipPengsu = styled.div`
   position:absolute;
-  top:${props => props.props.top  || '0'}
+  top:${props => props.props.top  || '0'};
   right:${props => props.props.right || '0'};
   box-sizing:border-box;
   background:#2b3039;
@@ -12,6 +12,7 @@ const TooltipPengsu = styled.div`
   font-size:14px;
   border-radius:5px;
   padding:11px 27px;
+  width:${props=>props.props.width || ''};
 `;
 const TooltipTriangle = styled.img`
   position:absolute;

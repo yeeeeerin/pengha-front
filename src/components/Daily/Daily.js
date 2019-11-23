@@ -16,7 +16,7 @@ const DivDailyPensu = styled.div`
 const DivDate = styled.div`
   position:relative;
   border-bottom: 1px solid rgba(43, 48, 57, 0.29);
-  padding:20px 0 14px 0;
+  padding:33px 0 14px 0;
 
 `;
 const DivButtonSet = styled.div`
@@ -42,7 +42,7 @@ function Daily({daily, onDelete}) {
     <ListItemDaily>
       <DivDailyPensu>
         <Mood size='big' type={type}/>
-        <Tooltip property={{msg:moodMsg, top:'-20px', right:'10%', triangleLeft:'60%'}}/>
+        <Tooltip property={{msg:moodMsg, width:'80%', top:'-20px', right:'10%', triangleLeft:'60%'}}/>
       </DivDailyPensu>
       <DivDate>
         {date}
