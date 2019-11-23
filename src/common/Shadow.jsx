@@ -37,7 +37,7 @@ const Shadow = (props) => {
 
         } else {
             const newShadow = {
-                opacity: 0.8,
+                opacity: 0.4,
                 index: 99
             }
             setShadow(newShadow)
