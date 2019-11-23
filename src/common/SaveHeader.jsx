@@ -12,7 +12,7 @@ const SaveHeader = (props) => {
 
     const handleOk = () => {
         handleDone();
-        setIsOk(true);
+        // setIsOk(true);
     }
 
     const handleIsBack = () => {
