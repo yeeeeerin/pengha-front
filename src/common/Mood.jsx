@@ -6,13 +6,10 @@ import { moodList } from "../util/moodList"
 const Mood = (props) => {
 
     const { size, type, onClick } = props;
-    console.log('size',size)
-    console.log('type',type)
     const width = size === 'small' ? 20 :
         size === 'middle' ? 20 : 42;
 
     const mood = moodList.find(m => m.type === type);
-    console.log(mood);
     const clickMood = () => {
 
 
@@ -21,7 +18,7 @@ const Mood = (props) => {
     }
 
     return (
-        <Wrapper src={require(`../static/img/mood/${mood.img}`)} width={width} onClick={clickMood} />
+        <Wrapper src={require(`../static/img/mood/${mood.img}`)} width={width} onClick={clickMood} override={props.override} />
     )
 
 }
@@ -29,7 +26,7 @@ export default Mood;
 
 const Wrapper = styled.img`
     position:relative;
-    float:left;
+    float: ${props => props.override || 'left'}
     width: ${props => `${props.width}%`};
 
     margin-right:5%;
