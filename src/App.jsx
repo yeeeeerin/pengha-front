@@ -2,12 +2,15 @@ import React from 'react';
 import styled from "styled-components";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from './main/Main';
+import Login from './components/Login/Login';
 
 const App = () => {
   return (
     <Wrapper >
       <Router>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/main" component={Main} />
+        {/* <Route exact path="/" component={Main} /> */}
       </Router>
     </Wrapper>
   );
