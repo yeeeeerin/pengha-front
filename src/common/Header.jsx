@@ -21,7 +21,7 @@ const Header = (props) => {
             <div className="logo">
                 펭수의 하루
             </div>
-            <img className="graph icon" src={graph} />
+            <img className="graph icon" src={graph}/>
 
             <img className="add icon" src={add} onClick={handleIsEdit} />
 

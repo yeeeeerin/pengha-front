@@ -16,7 +16,7 @@ const TooltipPengsu = styled.div`
 const TooltipTriangle = styled.img`
   position:absolute;
   top: 38px;
-  left: 20px;
+  left:${props => props.left || '20px'};
   width: 17px;
 `;
 
@@ -24,7 +24,7 @@ function Tooltip({property}) {
   return(
     <TooltipPengsu props={property}>
       {property.msg}
-      <TooltipTriangle src={triagle} alt="말풍선을 위한 삼각형"/>
+      <TooltipTriangle src={triagle} alt="말풍선을 위한 삼각형" left={property.triangleLeft}/>
     </TooltipPengsu>
   )
 }
