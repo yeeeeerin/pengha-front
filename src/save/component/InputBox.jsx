@@ -44,10 +44,13 @@ const InputTag = styled.input`
 
     &:hover {
     border: none;
+    border-bottom: solid 1px #dbdbdb;
+
     }
 
     &:focus {
     outline: none;
+    border-bottom: solid 1px #dbdbdb;
     }
 
     &::placeholder {

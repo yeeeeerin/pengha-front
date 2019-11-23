@@ -7,6 +7,7 @@ import EditMoodBox from "./component/EditMoodBox";
 const Save = (props) => {
 
     const [moodType, setMoodType] = useState("happy")
+    const [isDatePicker, setIsDatePicker] = useState(false);
 
     useEffect(() => {
 
@@ -16,10 +17,17 @@ const Save = (props) => {
         setMoodType(type);
     }
 
+
+    const datePicker = () => {
+        setIsDatePicker(!isDatePicker);
+    }
+
+
     return (
         <Wrapper>
             <SaveHeader />
-            <EditMoodBox type={moodType} />
+
+            <EditMoodBox type={moodType} datePicker={datePicker} />
             <MoodPicker handleMoodPicker={handleMoodPicker} />
         </Wrapper>
     )
@@ -30,3 +38,4 @@ export default Save;
 const Wrapper = styled.div`
 
 `
+

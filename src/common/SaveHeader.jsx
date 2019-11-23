@@ -35,6 +35,8 @@ const Wrapper = styled.div`
         font-size:18px;
         right:7.5%;
         bottom:24%;
+
+        color:#18193f;
     }
 
 `

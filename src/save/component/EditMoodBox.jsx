@@ -2,21 +2,25 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Mood from "../../common/Mood";
 import InputBox from "./InputBox";
+import DatePicker from "./DatePicker";
 
 
 const EditMoodBox = (props) => {
 
-    const { type } = props;
+    const { type, datePicker } = props;
     const [mood, setMood] = useState("")
+
 
     const handleSetMood = (text) => {
         setMood(text);
     }
 
 
-
     return (
         <Wrapper>
+
+            <DatePicker date={TEST_DATE} onClick={datePicker} />
+
             <div className="mood" >
                 <Mood size="big" type={type} />
             </div>
@@ -34,6 +38,8 @@ const EditMoodBox = (props) => {
 }
 
 export default EditMoodBox;
+
+const TEST_DATE = "2019년 11월 23일 토"
 
 const Wrapper = styled.div`
         position:absolute;
