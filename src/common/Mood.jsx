@@ -27,8 +27,8 @@ export default Mood;
 
 const Wrapper = styled.img`
     position:relative;
+    float:left;
     width: ${props => `${props.width}%`};
-    top:28.1px;
 
     margin-right:5%;
     margin-bottom:27px;

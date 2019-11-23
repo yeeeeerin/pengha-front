@@ -7,12 +7,13 @@ import DatePicker from "./DatePicker";
 
 const EditMoodBox = (props) => {
 
-    const { type, datePicker } = props;
+    const { type, datePicker, handleSetMood } = props;
     const [mood, setMood] = useState("")
 
 
-    const handleSetMood = (text) => {
-        setMood(text);
+    const handleSetMoodText = (text) => {
+        handleSetMood(text);
+        setMood(text)
     }
 
 
@@ -26,7 +27,7 @@ const EditMoodBox = (props) => {
             </div>
 
             <InputBox
-                onChange={handleSetMood}
+                onChange={handleSetMoodText}
                 width={76.2}
                 type="text"
                 value={mood}

@@ -5,10 +5,13 @@ import { Redirect } from "react-router";
 
 const SaveHeader = (props) => {
 
+    const { handleDone } = props;
+
     const [isOk, setIsOk] = useState(false);
     const [isBack, setIsBack] = useState(false);
 
     const handleOk = () => {
+        handleDone();
         setIsOk(true);
     }
 

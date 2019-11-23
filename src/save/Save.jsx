@@ -6,10 +6,13 @@ import EditMoodBox from "./component/EditMoodBox";
 import Shadow from "../common/Shadow";
 import DatePickerView from "./component/DatePickerView";
 
+import axios from 'axios';
+
 const Save = (props) => {
 
     const [moodType, setMoodType] = useState("happy")
     const [isDatePicker, setIsDatePicker] = useState(false);
+    const [mood, setMood] = useState("")
 
     useEffect(() => {
 
@@ -19,17 +22,34 @@ const Save = (props) => {
         setMoodType(type);
     }
 
+    const handleSetMood = (text) => {
+        setMood(text);
+    }
+
 
     const datePicker = () => {
         setIsDatePicker(!isDatePicker);
     }
 
+    const handleDone = async () => {
+        const url = "http://13.125.144.141:8000/api/moods"
+        var config = {
+            headers: { 'Access-Control-Allow-Origin': '*' }
+        };
+        const data = {
+            emoticon_type: moodType,
+            title: moodType,
+            desc: mood
+        }
+        await axios.post(url, data)
+    }
+
 
     return (
         <Wrapper>
-            <SaveHeader />
+            <SaveHeader handleDone={handleDone} />
 
-            <EditMoodBox type={moodType} datePicker={datePicker} />
+            <EditMoodBox type={moodType} datePicker={datePicker} handleSetMood={handleSetMood} />
             <MoodPicker handleMoodPicker={handleMoodPicker} />
             {isDatePicker && <DatePickerView datePicker={datePicker} />}
             <Shadow check={isDatePicker} />

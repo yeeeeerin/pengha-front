@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import Header from "../common/Header";
@@ -8,13 +8,18 @@ import Calendar from "./component/Calendar";
 
 const Main = () => {
 
+
+    useEffect(() => {
+
+    }, [])
+
     return (
         <Wrapper>
             <Header></Header>
             <CalendarList>
-                <Calendar height={30} />
-                <Calendar height={60} />
-                <Calendar height={80} />
+                <Calendar height={30} month={9} />
+                <Calendar height={60} month={10} />
+                <Calendar height={80} month={11} />
             </CalendarList>
         </Wrapper>
     )

@@ -32,7 +32,7 @@ const DatePickerView = (props) => {
                     dateArr.map((date, index) => {
                         return (
                             <DateTitle index={index} onClick={datePicker}>
-                                {currentDate.getYear()}년 {currentDate.getMonth()}월 {date}
+                                {2019}년 {currentDate.getMonth()}월 {date}일
                             </DateTitle>
                         )
 

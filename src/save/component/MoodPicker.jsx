@@ -41,8 +41,9 @@ const Wrapper = styled.div`
     &>.moodList{
         position:absolute;
         width:84.6%;
-        height:100%;
-        left:7.7%;
+        height:80%;
+        left:8.3%;
+        top:20px;
     }
 
 `
