@@ -6,19 +6,24 @@ import { Redirect } from "react-router";
 const SaveHeader = (props) => {
 
     const [isOk, setIsOk] = useState(false);
+    const [isBack, setIsBack] = useState(false);
 
     const handleOk = () => {
         setIsOk(true);
     }
 
+    const handleIsBack = () => {
+        setIsBack(!isBack);
+    }
     return (
         <Wrapper>
 
-            <img className="back" src={back} alt="" />
+            <img className="back" src={back} alt="" onClick={handleIsBack} />
 
             <div className="save" onClick={handleOk}>확인</div>
 
             {isOk && <Redirect push to={`/main`} />}
+            {isBack && <Redirect push to={`/main`} />}
         </Wrapper>
 
     )

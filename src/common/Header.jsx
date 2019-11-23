@@ -9,9 +9,12 @@ const Header = (props) => {
 
     const [isEdit, setIsEdit] = useState(false);
 
+
     const handleIsEdit = () => {
         setIsEdit(!isEdit);
     }
+
+
 
     return (
         <Wrapper>
@@ -23,6 +26,8 @@ const Header = (props) => {
             <img className="add icon" src={add} onClick={handleIsEdit} />
 
             {isEdit && <Redirect push to={`/save/1`} />}
+
+
 
         </Wrapper>
 
