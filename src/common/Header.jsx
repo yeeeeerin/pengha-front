@@ -22,7 +22,7 @@ export default Header;
 const Wrapper = styled.div`
     position:fixed;
     width:100%;
-    height:11.9%;
+    height:108px;
 
     .logo{
         position:absolute;
