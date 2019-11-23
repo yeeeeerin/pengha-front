@@ -12,15 +12,9 @@ const Main = () => {
         <Wrapper>
             <Header></Header>
             <CalendarList>
-                <Calendar>
-
-                </Calendar>
-                <Calendar>
-
-                </Calendar>
-                <Calendar>
-
-                </Calendar>
+                <Calendar height={30} />
+                <Calendar height={60} />
+                <Calendar height={80} />
             </CalendarList>
         </Wrapper>
     )

@@ -20,5 +20,9 @@ const Wrapper = styled.div`
     position:absolute;
     width:30%;
     height:10%;
+    font-size:15px;
+
+    font-family:"OTOmniGothicH";
+    font-weight:bold;
 
 `
