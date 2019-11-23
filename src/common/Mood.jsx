@@ -6,11 +6,13 @@ import { moodList } from "../util/moodList"
 const Mood = (props) => {
 
     const { size, type, onClick } = props;
+    console.log('size',size)
+    console.log('type',type)
     const width = size === 'small' ? 20 :
         size === 'middle' ? 20 : 42;
 
     const mood = moodList.find(m => m.type === type);
-
+    console.log(mood);
     const clickMood = () => {
 
 

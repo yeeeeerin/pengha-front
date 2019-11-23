@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Tooltip from '../Tooltip';
 import deleteIcon from '../../static/img/delete-icon.svg';
 import editIcon from '../../static/img/edit-icon.svg';
+import Tooltip from '../Tooltip';
+import Mood from '../../common/Mood';
 
 const ListItemDaily = styled.li`
-  height:336px;
   padding:0 28px;
+  margin-bottom:64px;
 `;
 const DivDailyPensu = styled.div`
   position:relative;
+  text-align:center;
 `;
 const DivDate = styled.div`
   position:relative;
   border-bottom: 1px solid rgba(43, 48, 57, 0.29);
-  padding-bottom:14px;
+  padding:33px 0 14px 0;
+
 `;
 const DivButtonSet = styled.div`
   position:absolute;
@@ -38,8 +41,8 @@ function Daily({daily, onDelete}) {
   return (
     <ListItemDaily>
       <DivDailyPensu>
-      <div>{type}</div>
-      <Tooltip property={{msg:moodMsg, top:'10px', right:'10px'}}/>
+        <Mood size='big' type={type}/>
+        <Tooltip property={{msg:moodMsg, width:'80%', top:'-20px', right:'10%', triangleLeft:'60%'}}/>
       </DivDailyPensu>
       <DivDate>
         {date}
