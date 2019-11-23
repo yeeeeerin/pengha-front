@@ -7,12 +7,14 @@ import Shadow from "../common/Shadow";
 import DatePickerView from "./component/DatePickerView";
 
 import axios from 'axios';
+import SaveInfoBox from "./component/SaveInfoBox";
 
 const Save = (props) => {
 
     const [moodType, setMoodType] = useState("happy")
     const [isDatePicker, setIsDatePicker] = useState(false);
     const [mood, setMood] = useState("")
+    const [isSaveInfoBox, setIsSaveInfoBox] = useState(false);
 
     useEffect(() => {
 
@@ -32,6 +34,7 @@ const Save = (props) => {
     }
 
     const handleDone = async () => {
+        setIsSaveInfoBox(true);
         const url = "http://13.125.144.141:8000/api/moods"
         var config = {
             headers: { 'Access-Control-Allow-Origin': '*' }
@@ -52,7 +55,8 @@ const Save = (props) => {
             <EditMoodBox type={moodType} datePicker={datePicker} handleSetMood={handleSetMood} />
             <MoodPicker handleMoodPicker={handleMoodPicker} />
             {isDatePicker && <DatePickerView datePicker={datePicker} />}
-            <Shadow check={isDatePicker} />
+            <Shadow check={isDatePicker || isSaveInfoBox} />
+            {isSaveInfoBox && <SaveInfoBox></SaveInfoBox>}
         </Wrapper>
     )
 }
