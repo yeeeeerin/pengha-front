@@ -12,17 +12,23 @@ const ListItemDaily = styled.li`
 const DivDailyPensu = styled.div`
   position:relative;
   text-align:center;
+  padding: 30px 0 0 0;
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
 `;
 const DivDate = styled.div`
   position:relative;
   border-bottom: 1px solid rgba(43, 48, 57, 0.29);
-  padding:33px 0 14px 0;
+  padding:10px 0 14px 0;
 
 `;
 const DivButtonSet = styled.div`
   position:absolute;
   right:0;
-  top: -50%;
+  top: -20%;
   transform: translateY(50%);
 `;
 const ButtonDaily = styled.button`
@@ -41,7 +47,7 @@ function Daily({daily, onDelete}) {
   return (
     <ListItemDaily>
       <DivDailyPensu>
-        <Mood size='big' type={type}/>
+        <Mood size='big' type={type} override="0"/>
         <Tooltip property={{msg:moodMsg, width:'80%', top:'-20px', right:'10%', triangleLeft:'60%'}}/>
       </DivDailyPensu>
       <DivDate>
