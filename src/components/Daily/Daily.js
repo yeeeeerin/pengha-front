@@ -33,17 +33,20 @@ const ButtonDaily = styled.button`
 const SpanButton = styled.span`
   visibility:hidden
 `;
-function Daily({moodMsg, type, date}) {
+function Daily({daily, onDelete}) {
+  const {id,moodMsg,type,date} = daily;
   return (
     <ListItemDaily>
       <DivDailyPensu>
       <div>{type}</div>
-      <Tooltip property={{msg:'펭-하!', top:'10px', right:'10px'}}/>
+      <Tooltip property={{msg:moodMsg, top:'10px', right:'10px'}}/>
       </DivDailyPensu>
       <DivDate>
         {date}
         <DivButtonSet>
-          <ButtonDaily bgUrl={deleteIcon}>
+          <ButtonDaily bgUrl={deleteIcon}
+            onClick={_=>onDelete(id)}
+          >
             <SpanButton>삭제</SpanButton>
           </ButtonDaily>
           <ButtonDaily bgUrl={editIcon}>
