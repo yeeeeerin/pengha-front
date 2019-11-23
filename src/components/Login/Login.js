@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import { KakaoAppKey } from '../../config';
 import axios from 'axios';
@@ -23,6 +23,7 @@ const ImgKakao = styled.img`
   vertical-align:middle;
   margin-right:12px;
 `;
+
 function Login() {
   // const [isLoginClicked, setIsLoginClicked] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
@@ -50,8 +51,8 @@ function Login() {
         // handle success
         // 서버에 토큰 줄 예정
         console.log(res);
-        localStorage.setItem('token');
-        // <Redirect to="/ranking" />
+        localStorage.setItem('token','받아올 토큰');
+        setIsLogin(true);
       })
       .catch(error => {
         // handle error
@@ -65,6 +66,7 @@ function Login() {
         alert(JSON.stringify(authObj));
         localStorage.setItem('accessToken',authObj.access_token)
         localStorage.setItem('refreshToken',authObj.refresh_token)
+        auth(authObj.access_token);
       },
       fail: function(err) {
         alert(JSON.stringify(err));
@@ -72,13 +74,14 @@ function Login() {
     });
   }
   return (
-    <div>
-          <ButtonKakao
-            onClick={kakaoLogin}
-          ><ImgKakao src={kakaoLogo} alt="카카오 로고"/>
-          <SpanKakao >카카오 계정으로 로그인</SpanKakao>
-          </ButtonKakao>
-    </div>
+    <>
+      <ButtonKakao
+        onClick={kakaoLogin}
+        ><ImgKakao src={kakaoLogo} alt="카카오 로고"/>
+      <SpanKakao >카카오 계정으로 로그인</SpanKakao>
+      </ButtonKakao>
+      { isLogin && <Redirect to="/main"/> }
+    </>
   );
 }
 
