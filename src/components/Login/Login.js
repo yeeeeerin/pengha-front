@@ -5,8 +5,15 @@ import { KakaoAppKey } from '../../config';
 import axios from 'axios';
 import kakaoLogo from '../../static/img/kakao-login.svg'
 
+const LoginButton = styled.div`
+  width:80%;
+  position:absolute;
+  bottom:60px;
+  transform: translateX(-50%);
+  left:50%;
+`;
 const ButtonKakao = styled.button`
-  width: 319px;
+  width: 100%;
   height: 56px;
   border-radius: 2px;
   border: 0;
@@ -74,14 +81,14 @@ function Login() {
     });
   }
   return (
-    <>
+    <LoginButton>
       <ButtonKakao
         onClick={kakaoLogin}
         ><ImgKakao src={kakaoLogo} alt="카카오 로고"/>
       <SpanKakao >카카오 계정으로 로그인</SpanKakao>
       </ButtonKakao>
       { isLogin && <Redirect to="/main"/> }
-    </>
+    </LoginButton>
   );
 }
 
