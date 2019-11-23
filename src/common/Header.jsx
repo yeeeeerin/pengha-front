@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import graph from "../static/img/graph-icon.svg";
 import add from "../static/img/add-icon.svg";
+import { Redirect } from "react-router";
 
 
 const Header = (props) => {
+
+    const [isEdit, setIsEdit] = useState(false);
+
+    const handleIsEdit = () => {
+        setIsEdit(!isEdit);
+    }
+
     return (
         <Wrapper>
             <div className="logo">
@@ -12,7 +20,10 @@ const Header = (props) => {
             </div>
             <img className="graph icon" src={graph} />
 
-            <img className="add icon" src={add} />
+            <img className="add icon" src={add} onClick={handleIsEdit} />
+
+            {isEdit && <Redirect push to={`/save/1`} />}
+
         </Wrapper>
 
     )

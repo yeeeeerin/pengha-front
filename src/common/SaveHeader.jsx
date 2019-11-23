@@ -18,7 +18,7 @@ const SaveHeader = (props) => {
 
             <div className="save" onClick={handleOk}>확인</div>
 
-            {isOk && <Redirect push to={`/`} />}
+            {isOk && <Redirect push to={`/main`} />}
         </Wrapper>
 
     )
